@@ -2,11 +2,10 @@
 body {
   /*background: linear-gradient(180deg, navy, black); /* A gradient blending navy and black for a cosmic look */
   color: #f5f6fa;
-  background-color: black;
+  background-color: #000050;
   font-family: 'Orbitron', sans-serif; /* A futuristic sci-fi font (Google Fonts recommended) */
   margin: 0;
   padding: 0;
-  background-image: url(./images/AHSRocketryLogo.png); /* Replace with your image URL */
   background-size: cover; /* Ensures the image covers the entire screen */
   background-attachment: fixed; /* Keeps the background fixed during scrolling */
   background-repeat: no-repeat; /* Avoids tiling the image */
@@ -27,22 +26,22 @@ body {
   text-shadow: 2px 2px 10px rgba(255, 0, 0, 0.6), /* Red glow */
                2px 2px 20px rgba(0, 0, 255, 0.4); /* Blue glow */
   padding: 20px 0;
-  margin: 0;
+  margin: 0px;
   position: relative;
 }
 
-/* Cool Animation */
+/* Cool Animation 
 .header-title::after {
   content: '';
   position: absolute;
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
-  width: 100px;
-  height: 5px;
+  width: 1000px;
+  height: 150px;
   background: linear-gradient(to right, red, navy);
   animation: pulse 2s infinite;
-}
+}*/
 
 /* Pulsing Bar Animation */
 @keyframes pulse {
@@ -145,12 +144,14 @@ footer {
   font-weight: bold;
   text-transform: uppercase;
   border: 2px solid red; /* Red border for emphasis */
-  border-radius: 50px; /* Rounded edges for a sleek look */
+  border-radius: 10px; /* Rounded edges for a sleek look */
   padding: 12px 24px;
   cursor: pointer;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   position: relative;
   overflow: hidden;
+  max-width: 300px;
+  min-width: 100px;
 }
 
 /* Dynamic Glow Effect */
@@ -181,4 +182,30 @@ footer {
 .rocket-btn:active {
   transform: scale(0.95); /* Press-down effect */
   box-shadow: 0 0 10px rgba(255, 0, 0, 0.5), 0 0 20px rgba(0, 0, 255, 0.3);
+}
+
+.intro-vid {
+  margin-top: 70px;
+  display: block;
+  position: inherit;
+  margin-left: auto;
+  margin-right: auto; 
+  width:100%;
+  height: auto;
+  object-fit: scale-down;
+  align-content: center;
+}
+
+.header-bar {
+  position: fixed;
+  top: 5px;
+  background-color: #f5f6fa;
+  border: 5px solid blue;
+  width: 100%;
+  padding:10px;
+  margin-bottom: 10px;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
 }

@@ -208,3 +208,10 @@ footer {
   justify-content: center;
   align-items: center;
 }
+
+table {
+  background-color: azure;
+  color:darkslategray;
+  font-size: 18px;
+  align-content: center;
+}

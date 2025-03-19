@@ -1,19 +1,17 @@
 /* General Styles */
 body {
-  font-family: "Roboto", Sans-serif;
-  background-color: var(--background);
+  background-color: var(--body-background);
   color: var(--text);
+  font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
   line-height: 1.6;
-
 }
 
 /* Heading Styles */
 h1, h2, h3 {
-  color: var(--text);
+  color: #f3f3f3;
   margin-bottom: 10px;
-
 }
 
 h1 {
@@ -29,23 +27,83 @@ h3 {
   font-size: 1.75em;
 }
 
-/* paragraph styles */
+/* Paragraph Styles */
 p {
   margin: 10px 0;
 }
 
-/*Table Styles */
+/* Table Styles */
 table {
-  width: 100%;
+  width: 90%;
+  justify-content: center;
   border-collapse: collapse;
   margin: 20px 0;
-  background-color: var(--table-background);
-  color: var(--table-text);
+  background-color: #E6EFF5; /* Light muted blue */
+  color: #485F76; /* Muted dark blue-gray */
+  font-size: 1em;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
 }
 
+/* Table Header Styles */
+table th {
+  background-color: #B8D5E6; /* Muted medium blue */
+  color: #2C3E50; /* Darker muted blue-gray */
+  text-align: center;
+  padding: 2px;
+  font-weight: bold;
+  border: 1px solid #A4C3D8; /* Slightly darker muted blue for contrast */
+}
+
+/* Table Row Styles */
+table td {
+  border: 1px solid #A4C3D8;
+  padding: 10px;
+  text-align: center;
+}
+
+/* Alternate Row Styling for Better Readability */
+table tr:nth-child(even) {
+  background-color: #F0F7FC; /* Very light muted blue for alternation */
+}
+
+
+/* Button Styles */
+.button {
+  background-color: #D65F5F; /* Muted red */
+  color: #f3f3f3;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 1.75em;
+  border-radius: 5px;
+}
+
+.button:hover {
+  background-color: #B74444; /* Darker muted red */
+}
+
+/* Menu Styles */
+nav {
+  background-color: #D65F5F;
+  padding: 10px;
+  text-align: center;
+}
+
+nav a {
+  color: #f3f3f3;
+  text-decoration: none;
+  margin: 0 15px;
+  font-size: 1em;
+}
+
+nav a:hover {
+  text-decoration: none;
+}
+
+
 /* colors */
-:variables {
---background: #485F76;
+:root {
+--body-background: #485FA6;
 --text: #f3f3f3;
 --top-menu: #925126;
 --menu-color: #7A7A7A;
@@ -73,8 +131,6 @@ table {
 .header-bar {
   position: fixed;
   top: 5px;
-  background-color: #f5f6fa;
-  border: 5px solid blue;
   width: 100%;
   padding:10px;
   margin-bottom: 10px;

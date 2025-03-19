@@ -1,186 +1,207 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Fabrication</title>
-    <link href="rocetry.css" type="text/css" type="stylesheet" />
+    <title>Design & Build</title>
+    <link href="rocketry.css" type="text/css" rel="stylesheet" />
   </head>
   <body>
-    <div id="header">
+    <!-- Header Section -->
+    <header class="header">
       <img src="./images/AHSRocketryLogo.png" class="header-logo" />
-      <link type="text/css" href="./rocketry.css" rel="stylesheet"/> 
-      <h1>American Heritage Rocketry</h1>
+      <h1 class="title">American Heritage Rocketry</h1>
+    </header>
+    <!-- Navigation Buttons -->
+    <nav class="nav-buttons">
+      <button onclick="location.href='mainPage.html'">Home</button>
+      <button onclick="location.href='about.html'">About</button>
+      <button class="current-page" onclick="location.href='fabrication.html'">Design & Build</button>
+      <button onclick="location.href='arc-info.html'">ARC at AHS</button>
+      <button onclick="location.href='launch-info.html'">Launch Info</button>
+    </nav>
+    <div class="container">
+      <nav class="menu">
+        <div class="left-column">
+          <ul>
+            <li><a href="#" onclick="updateContent('aerodynamics')">Aerodynamics</a></li>
+            <li><a href="#" onclick="updateContent('stability')">Stability</a></li>
+            <li><a href="#" onclick="updateContent('openrocket')">OpenRocket Design</a></li>
+            <li class="dropdown">
+              <a href="#">Fabrication &#9662;</a>
+              <ul class="dropdown-content">
+                <li><a href="#" onclick="updateContent('nose')">Nose</a></li>
+                <li><a href="#" onclick="updateContent('body-tube')">Body Tube</a></li>
+                <li><a href="#" onclick="updateContent('motor-mount')">Motor Mount</a></li>
+                <li><a href="#" onclick="updateContent('fins')">Fins</a></li>
+                <li><a href="#" onclick="updateContent('retainers')">Retainers</a></li>
+                <li><a href="#" onclick="updateContent('recovery-systems')">Recovery Systems</a></li>
+                <li><a href="#" onclick="updateContent('finishing')">Finishing</a></li>
+              </ul>
+            </li>
+            <li><a href="#" onclick="updateContent('motors')">Motors</a></li>
+          </ul>
+        </div>
+      </nav>
+      <div id="content-area" class="right-column"></div>
     </div>
-    <div id="left column" class="left-column">
-      <div href="#aerodynamics">Aerodynamics</div>
-      <div href="#stability">Stability</div>
-      <div href="#design">OpenRocket Design</div>
-      <div class="dropdown">
-        Fabrication
-        <div href="#nose">Nose</div>
-        <div href="#Body-Tube">Body Tube</div>
-        <div href="#motor-mount">Motor Mount</div>
-        <div href="#fins">Fins</div>
-        <div href="#retainers">Retainers</div>
-        <div href="#recoery-systems">Recovery Systems</div>
-        <div href="#finishing">Finishing</div>
-      </div>
-      <div href="#motors">Motors</div>
-    </div>
-
-    <div id="right column" class="right-column">
-      <h1 id="Nose">Nose</h1>
-      <p>
+    <div id="content-source" style="display: none;">
+      <div id="nose">
+        <h1 style="color: var(--content-text);">Nose Cones</h1>
+        <p>
         The nose is the front end of the model rocket (astounding, I know). It
         is made of two parts:
-      </p>
-      <ul>
-        <li>Nose</li>
-        <li>Shoulder</li>
-      </ul>
-      <p>
-        The shape of the nose can vary widely, leading to different aerodynamic
-        profiles. Some common nose shapes are in the table below. Click on them
-        to learn more about each nose type.
-      </p>
-      <table style="margin: 10px" id="nose-table">
-        <tr>
-          <td>
-            <a href="#conical"><img src="" id="nose-cone" /></a>
-          </td>
-          <td>
-            <a href="#ogive"><img src="" id="nose-ogive" /></a>
-          </td>
-          <td>
-            <a href="#ellipsoid"><img src="" id="nose-ellipsoid" /></a>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <a href="#conical"><h3>Conical</h3></a>
-          </td>
-          <td>
-            <a href="#ogive"><h3>Ogive</h3></a>
-          </td>
-          <td>
-            <a href="#ellipsoid"><h3>Ellipsoid</h3></a>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <a href="#power"><img src="" id="nose-power" /></a>
-          </td>
-          <td>
-            <a href="#parabolic"><img src="" id="nose-parabolic" /></a>
-          </td>
-          <td>
-            <a href="#haack"><img src="" id="nose-Haack" /></a>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <a href="#power"><h3>Power Series</h3></a>
-          </td>
-          <td>
-            <a href="#parabolic"><h3>Parabolic</h3></a>
-          </td>
-          <td>
-            <a href="#haack"><h3>Haack Series</h3></a>
-          </td>
-        </tr>
-      </table>
-      <p>
-        The nose must always be free to slide forward and come off. Therefore,
-        the back end of the nose is cut down to form an internal shoulder which
-        will slide inside the body tube and hold the nose in place. The base
-        diameter of the nose should match the <em>outside</em> diameter of the
-        body tube, while the diameter of the shoulder should match the
-        <em>inner</em> diameter of the body tube so that it will slip-fit inside
-        the tube. It's better to have the shoulder a little loose because you
-        can always build it up by wrapping tape around the shoulder. If it's too
-        large, then you'll need to sand the shoulder down. A rule of thumb for
-        testing the looseness of the shoulder is that it should pull easily from
-        the body tube but shouldn't rattle if you shake the body tube.<br /><br />
-        The nose must be made of plastic or balsa wood, but never metal. Nor
-        should a metal pin or nail be attached to the tip as it could turn a
-        malfunctioning rocket into a missile or lawn dart. Besides, rounded nose
-        tips perform better than pointed ones.<br /><br />
-        Several commercial noses are available, and it can be very simple to
-        select a Designing one's own nose cone is a lot of fun and one of the
-        key ways to customize a rocket. It is also one of the key components of
-        a rocket's stability and aerodynamics. It is therefore
-        <strong><em>very</em></strong> important that fabricated model matches
-        the computer design.
-      </p>
-
-      <h1 id="Body-Tube">Body Tube</h1>
-      <p>
-        Body tubes for model rockets are usually mjade from thin walled paper
-        tubes. Because such tubes are not easy to make, most model rocketeers
-        buy them ready-made from hobby shops or by direct mail from
-        manufacturers<br /><br />The standard available body tubes are given
-        below with their inner and outer diameters.
-      </p>
-      <div id="body-tube-table" style="display: flex; justify-content: center;">
-      <table>
-        <thead>
-          <tr>
-            <th><h4>Tube Size</h4></th>
-            <th><h4>Outer diameter (mm)</h4></th>
-            <th><h4>Inner Diameter (mm)</h4></th>
-            <th><h4>Notes</h4></th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>BT20</td>
-            <td>18.7</td>
-            <td>18.0</td>
-            <td>Same size as motor tubes for 18mm motors.</td>
-          </tr>
-          <tr>
-            <td>BT50</td>
-            <td>24.8</td>
-            <td>24.1</td>
-            <td>Same size as motor tubes for 24mm motors.</td>
-          </tr>
-          <tr>
-            <td>BT55</td>
-            <td>33.7</td>
-            <td>32.6</td>
-            <td>Minimum size for 29mm motors</td>
-          </tr>
-          <tr>
-            <td>BT60</td>
-            <td>41.6</td>
-            <td>40.5</td>
-            <td>Minimum size for clusters</td>
-          </tr>
-          <tr>
-            <td>BT70</td>
-            <td>56.3</td>
-            <td>55.2</td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>BT80</td>
-            <td>66.0</td>
-            <td>65.0</td>
-            <td></td>
-          </tr>
-        </tbody>
-      </table>
+        </p>
+        <ul>
+          <li>Nose</li>
+          <li>Shoulder</li>
+        </ul>
+        <p>
+          The shape of the nose can vary widely, leading to different aerodynamic
+          profiles. Some common nose shapes are in the table below. Click on them
+          to learn more about each nose type.
+        </p>
+        <div style="display: flex; justify-content: center;"> 
+          <table style="margin: 10px; width: 425px;" id="nose-table">
+            <tr>
+              <td>
+                <a href="#conical"><img src="./images/Conical.jpg" id="nose-conical" class="nose" /></a>
+              </td>
+              <td>
+                <a href="#ogive"><img src="./images/ogive.jpg" id="nose-ogive" class="nose" /></a>
+              </td>
+              <td>
+                <a href="#ellipsoid"><img src="./images/Ellipsoid.jpg" id="nose-ellipsoid" class="nose"/></a>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <a href="#conical"><h4>Conical</h4></a>
+              </td>
+              <td>
+                <a href="#ogive"><h4>Ogive</h4></a>
+              </td>
+              <td>
+                <a href="#ellipsoid"><h4>Ellipsoid</h4></a>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <a href="#power"><img src="./images/Power.jpg" id="nose-power" class="nose"/></a>
+              </td>
+              <td>
+                <a href="#parabolic"><img src="./images/Parabolic.jpg" id="nose-parabolic" class="nose" /></a>
+              </td>
+              <td>
+                <a href="#haack"><img src="./images/Haack.jpg" id="nose-Haack" class="nose"/></a>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <a href="#power"><h4>Power Series</h4></a>
+              </td>
+              <td>
+                <a href="#parabolic"><h4>Parabolic</h4></a>
+              </td>
+              <td>
+                <a href="#haack"><h4>Haack Series</h4></a>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <p>
+          The nose must always be free to slide forward and come off. Therefore,
+          the back end of the nose is cut down to form an internal shoulder which
+          will slide inside the body tube and hold the nose in place. The base
+          diameter of the nose should match the <em>outside</em> diameter of the
+          body tube, while the diameter of the shoulder should match the
+          <em>inner</em> diameter of the body tube so that it will slip-fit inside
+          the tube. It's better to have the shoulder a little loose because you
+          can always build it up by wrapping tape around the shoulder. If it's too
+          large, then you'll need to sand the shoulder down. A rule of thumb for
+          testing the looseness of the shoulder is that it should pull easily from
+          the body tube but shouldn't rattle if you shake the body tube.<br /><br />
+          The nose must be made of plastic or balsa wood, but never metal. Nor
+          should a metal pin or nail be attached to the tip as it could turn a
+          malfunctioning rocket into a missile or lawn dart. Besides, rounded nose
+          tips perform better than pointed ones.<br /><br />
+          Several commercial noses are available, and it can be very simple to
+          select a Designing one's own nose cone is a lot of fun and one of the
+          key ways to customize a rocket. It is also one of the key components of
+          a rocket's stability and aerodynamics. It is therefore
+          <strong><em>very</em></strong> important that fabricated model matches
+          the computer design.
+        </p>
       </div>
-      <h2>Measuring & Marking</h2>
-      <p>To cut a tube to the required length, first measure the desired length of tube with a steel rule or with one of the yellow marking guides. The yellow guides allow you to set a marker to the desired length and insert a pencil into the hole at one end. Then to mark the cutting line around the tube, simply twist the tube in place, allowing the pencil to scribe a perfectly flat line around the tube.</p>
-      <img src="" id="marking-guide-01"/><img src="" id="marking-guide-02"/>
-      <p>It really pays to use precision tools like this rather than eyeballing a flat line, as a messy or angled cut will prevent a nose or transition from sitting straight in the tube and could seriously impose some rotational forces on the rocket in flight.</p>
-      &nbsp;
-      <p>To cut the tube along the scribed line, you can use cutting guides for tubes of BT60 or smaller. Take the appropriate sized cutting guide, separate it into halves and slide the part with the flat edge up to the penciled line. Then slide the other half up until it tightens the cutting guide in place.<br><br>
-      Cut the tube with an X-acto knife. Make several passes around the tube with the blade, cutting only a little on each pass. Don't try to cut all the way through the tube on the first pass or try to stab the tip of the knife through or you'll mess up the tube. With a little patience, and with some practice, you should be able to cut a body tube so that you can't tell it was cut to custom length. 
-      </p>
-      &nbsp;
-      <h2>Fin Slots</h2>
-      <p>The other part of a tube that needs to be cut are slots for fins to pass through the </p>
+      <div id="body-tube">
+        <h1 class="content-header">Body Tube</h1>
+        <p>
+          Body tubes for model rockets are usually mjade from thin walled paper
+          tubes. Because such tubes are not easy to make, most model rocketeers
+          buy them ready-made from hobby shops or by direct mail from
+          manufacturers<br /><br />The standard available body tubes are given
+          below with their inner and outer diameters.
+        </p>
+        <div id="body-tube-table" style="display: flex; justify-content: center;">
+          <table>
+            <thead>
+              <tr>
+                <th><h4>Tube Size</h4></th>
+                <th><h4>Outer diameter (mm)</h4></th>
+                <th><h4>Inner Diameter (mm)</h4></th>
+                <th><h4>Notes</h4></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>BT20</td>
+                <td>18.7</td>
+                <td>18.0</td>
+                <td>Same size as motor tubes for 18mm motors.</td>
+              </tr>
+              <tr>
+                <td>BT50</td>
+                <td>24.8</td>
+                <td>24.1</td>
+                <td>Same size as motor tubes for 24mm motors.</td>
+              </tr>
+              <tr>
+                <td>BT55</td>
+                <td>33.7</td>
+                <td>32.6</td>
+                <td>Minimum size for 29mm motors</td>
+              </tr>
+              <tr>
+                <td>BT60</td>
+                <td>41.6</td>
+                <td>40.5</td>
+                <td>Minimum size for clusters</td>
+              </tr>
+              <tr>
+                <td>BT70</td>
+                <td>56.3</td>
+                <td>55.2</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>BT80</td>
+                <td>66.0</td>
+                <td>65.0</td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <h2 class="content-header">Measuring & Marking</h2>
+        <p>To cut a tube to the required length, first measure the desired length of tube with a steel rule or with one of the yellow marking guides. The yellow guides allow you to set a marker to the desired length and insert a pencil into the hole at one end. Then to mark the cutting line around the tube, simply twist the tube in place, allowing the pencil to scribe a perfectly flat line around the tube.</p>
+        <img src="" id="marking-guide-01"/><img src="" id="marking-guide-02"/>
+        <p>It really pays to use precision tools like this rather than eyeballing a flat line, as a messy or angled cut will prevent a nose or transition from sitting straight in the tube and could seriously impose some rotational forces on the rocket in flight.</p>
+        &nbsp;
+        <p>To cut the tube along the scribed line, you can use cutting guides for tubes of BT60 or smaller. Take the appropriate sized cutting guide, separate it into halves and slide the part with the flat edge up to the penciled line. Then slide the other half up until it tightens the cutting guide in place.<br><br>
+        Cut the tube with an X-acto knife. Make several passes around the tube with the blade, cutting only a little on each pass. Don't try to cut all the way through the tube on the first pass or try to stab the tip of the knife through or you'll mess up the tube. With a little patience, and with some practice, you should be able to cut a body tube so that you can't tell it was cut to custom length. 
+        </p>
+        &nbsp;
+        <h2 class="content-header">Fin Slots</h2>
+        <p>The other part of a tube that needs to be cut are slots for fins to pass through the </p>
+      </div>
       <h1>Motor Mount & Shock Cord</h1>
       <h2>Sizes</h2>
       <h2>Motor Blocks</h2>
@@ -201,5 +222,20 @@
       <h2>Painting</h2>
       <h2>Decals</h2>
     </div>
+
+    <script>
+      function updateContent(newContent) {
+        // Grab the content from the source div by ID
+        const sourceContent = document.getElementById(newContent).innerHTML;
+        document.getElementById('content-area').innerHTML = sourceContent;
+      }
+
+      document.querySelector('.dropdown > a').addEventListener('click', function(e) {
+        e.preventDefault(); // Prevent the default link behavior
+        const dropdownMenu = this.nextElementSibling;
+        dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
+      });
+
+    </script>
   </body>
 </html>

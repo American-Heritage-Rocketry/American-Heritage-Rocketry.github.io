@@ -3,6 +3,7 @@ body {
   background-color: var(--body-background);
   color: var(--text);
   font-family: Arial, sans-serif;
+  height: 100vh;
   margin: 0;
   padding: 0;
   line-height: 1.6;
@@ -27,6 +28,11 @@ h3 {
   font-size: 1.75em;
 }
 
+h4 {
+  font-size: 1.2em;
+  margin:5px !important;
+}
+
 /* Paragraph Styles */
 p {
   margin: 10px 0;
@@ -34,11 +40,11 @@ p {
 
 /* Table Styles */
 table {
-  width: 90%;
+  width: 70%;
   justify-content: center;
   border-collapse: collapse;
   margin: 20px 0;
-  background-color: #E6EFF5; /* Light muted blue */
+  background-color: #fff; /* Light muted blue */
   color: #485F76; /* Muted dark blue-gray */
   font-size: 1em;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
@@ -46,7 +52,7 @@ table {
 
 /* Table Header Styles */
 table th {
-  background-color: #B8D5E6; /* Muted medium blue */
+  background-color: var(--table-head-row); /* Muted medium blue */
   color: #2C3E50; /* Darker muted blue-gray */
   text-align: center;
   padding: 2px;
@@ -61,9 +67,14 @@ table td {
   text-align: center;
 }
 
+.nose {
+  height: 200px;
+  object-fit: scale-down;
+}
+
 /* Alternate Row Styling for Better Readability */
 table tr:nth-child(even) {
-  background-color: #F0F7FC; /* Very light muted blue for alternation */
+  background-color: var(--table-background-alternate); /* Very light muted blue for alternation */
 }
 
 
@@ -83,7 +94,7 @@ table tr:nth-child(even) {
 }
 
 /* Menu Styles */
-nav {
+/*nav {
   background-color: #D65F5F;
   padding: 10px;
   text-align: center;
@@ -105,11 +116,14 @@ nav a:hover {
 :root {
 --body-background: #485FA6;
 --text: #f3f3f3;
+--content-text: #485F76;
 --top-menu: #925126;
 --menu-color: #7A7A7A;
 --menu-color-secondary: #54595F;
 --menu-color-header: #383F4A;
+--table-head-row: #B8D5E6;
 --table-background: #f3f3f3;
+--table-background-alternate: #F0F7FC;
 --table-text: #485F76;
 --button-primary: #B74444;
 --button-secondar: hsl(0, 44%, 21%);
@@ -128,6 +142,19 @@ nav a:hover {
   align-content: center;
 }
 
+.header {
+  top:0;
+  display: flex;
+  justify-content: center;
+  height:80px;
+  background: var(--button-primary);
+  color: var(--text);
+  padding: 0 20px;
+  font-family: Helvetica, sans-serif;
+  text-transform: uppercase;
+  box-sizing: border-box;
+}
+
 .header-bar {
   position: fixed;
   top: 5px;
@@ -140,9 +167,176 @@ nav a:hover {
   align-items: center;
 }
 
-table {
+.logo {
+  height: 60px;
+}
+
+.title {
+  margin: 10px;
+}
+
+
+/* Navigation Buttons */
+.nav-buttons {
+  display: flex;
+  justify-content: center;
+  margin-top: 0;
+  padding: 0;
+  background-color: #E6EFF5; /* Light muted blue for buttons background */
+}
+
+.nav-buttons button {
+  background-color: #D65F5F; /* Muted red */
+  color: #f3f3f3;
+  border: none;
+  padding: 10px 20px;
+  margin: 0 0px;
+  cursor: pointer;
+  font-size: 1em;
+  border-radius: 1px;
+}
+
+.nav-buttons button:hover {
+  background-color: #B74444; /* Darker muted red on hover */
+}
+
+/* Current Page Button Style */
+.nav-buttons .current-page {
+  background-color: #B74444; /* Dark muted red for current page */
+  color: var(--text); /* Text color to match the design */
+  cursor: default; /* Indicates that it's non-clickable */
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.3); /* Subtle inset effect */
+}
+
+/*table {
   background-color: azure;
   color:darkslategray;
   font-size: 18px;
   align-content: center;
+}
+
+
+
+/* Column Stuff */
+
+.container {
+  display: flex;
+  justify-content: center;
+  width: 90%;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  height: 85vh;
+  margin: 0 auto;
+
+}
+
+.left-column {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background-color: #485F76;
+  color: #f3f3f3;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.left-column ul {
+  list-style-type: none;
+  padding: 0;
+  flex-direction: column;
+}
+
+.left-column li {
+  display: block;
+  margin: 10px 0;
+}
+
+.left-column a {
+  color: #f3f3f3;
+  text-decoration: none;
+}
+
+.left-column a:hover {
+  text-decoration: none;
+}
+
+.right-column {
+  width: 70%;
+  padding: 20px;
+  background-color: var(--text);
+  color: #485F76;
+  box-sizing: border-box;
+  overflow-y:auto;
+}
+
+.left-column, .right-column {
+  min-width: 0;
+  max-width: 100%;
+}
+
+.menu {
+  flex: 0 0 30%;
+  margin: 0;
+  padding: 0;
+}
+
+.menu ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  background-color: #485F76;
+  display: flex;
+}
+
+.menu ul li {
+  position: relative; /* Needed for dropdown positioning */
+  width: 100%;
+}
+
+.menu ul li a {
+  color: var(--text);
+  text-decoration: none;
+  padding: 5px 10px;
+  display: block;
+}
+
+.menu ul li a:hover {
+  background-color: #6E7F8D;
+}
+
+/* Dropdown Styles */
+.dropdown .dropdown-content {
+  display: none;
+}
+
+.dropdown-content {
+  display: none;
+  position: relative;
+  top: 100%; /* Position below the parent <li> */
+  left: 0;
+  background-color: #485F76;
+  min-width: 150px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+}
+
+.dropdown-content li a {
+  padding: 10px;
+  white-space: nowrap; /* Prevent wrapping */
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content li a:hover {
+  background-color: #6E7F8D;
+}
+
+/* Show Dropdown on Hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.content-header {
+  color: var(--content-text) !important;
 }
